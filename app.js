@@ -1305,8 +1305,38 @@ function attachStageEvents(){
 }
 function download(filename,text,mime){ const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([text],{type:mime})); a.download=filename; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),1000); }
 function downloadUrl(filename,url){ const a=document.createElement('a'); a.href=url; a.download=filename; a.click(); }
+
+function showExportLoading(text="Preparing download..."){
+  let overlay = document.getElementById("exportLoadingOverlay");
+  if (!overlay) {
+    overlay = document.createElement("div");
+    overlay.id = "exportLoadingOverlay";
+    overlay.innerHTML = `
+      <div class="export-loading-box">
+        <div class="export-spinner"></div>
+        <div id="exportLoadingText">Preparing download...</div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+  }
+  const label = document.getElementById("exportLoadingText");
+  if (label) label.textContent = text;
+  overlay.classList.add("active");
+}
+
+function hideExportLoading(){
+  const overlay = document.getElementById("exportLoadingOverlay");
+  if (overlay) overlay.classList.remove("active");
+}
+
+function waitFrame(){
+  return new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+}
+
 async function exportSvg(){
   try{
+    showExportLoading("Preparing SVG download...");
+    await waitFrame();
     rememberCurrentFormatState();
     let svg = generateSvg(false);
 
@@ -1326,6 +1356,8 @@ async function exportSvg(){
   }catch(err){
     console.error("SVG export failed", err);
     alert("SVG export failed. Check console.");
+  } finally {
+    hideExportLoading();
   }
 }
 
@@ -1400,6 +1432,8 @@ async function exportJpg(){
 
 async function exportPdf(){
   try{
+    showExportLoading("Preparing high-quality PDF...");
+    await waitFrame();
     rememberCurrentFormatState();
 
     const [w,h] = dims(state.format);
@@ -1467,6 +1501,8 @@ async function exportPdf(){
   }catch(err){
     console.error("PDF export failed", err);
     alert("PDF export failed. Open console for details.");
+  } finally {
+    hideExportLoading();
   }
 }
 

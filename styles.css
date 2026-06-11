@@ -42,3 +42,45 @@ input,select,textarea{width:100%;padding:11px 12px;border-radius:10px;border:1px
 
 .numberInput{width:76px;background:#071d43;color:#fff;border:1px solid #2d5b9e;border-radius:8px;padding:6px 8px;font-weight:800;text-align:center;}
 .rangeRow{gap:8px;}
+
+#exportLoadingOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 10, 25, 0.72);
+  backdrop-filter: blur(6px);
+}
+
+#exportLoadingOverlay.active {
+  display: flex;
+}
+
+.export-loading-box {
+  min-width: 280px;
+  padding: 28px 34px;
+  border-radius: 22px;
+  background: rgba(10, 24, 54, 0.96);
+  border: 1px solid rgba(255,255,255,0.16);
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-weight: 800;
+  text-align: center;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.45);
+}
+
+.export-spinner {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  border: 5px solid rgba(255,255,255,0.22);
+  border-top-color: #f6c845;
+  animation: exportSpin 0.8s linear infinite;
+}
+
+@keyframes exportSpin {
+  to { transform: rotate(360deg); }
+}
