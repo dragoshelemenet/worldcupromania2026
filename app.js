@@ -1,15 +1,12 @@
 const $ = id => document.getElementById(id);
 const ASSETS = {"logo1": {"src": "assets/logo_main_transparent_white.png", "ratio": 1.0}, "logo2": {"src": "assets/extracted_embedded/embedded_07ff6495652e.png", "ratio": 1.0}, "logo3": {"src": "assets/extracted_embedded/embedded_d9d860717b92.jpg", "ratio": 1.0}, "logo4": {"src": "assets/extracted_embedded/embedded_11e7226f3f1c.jpg", "ratio": 1.0}, "officialBg": {"src": "assets/extracted_embedded/embedded_f9eea3b90fa6.png", "ratio": 1.7768331562167907}, "frp1": {"src": "assets/extracted_embedded/embedded_028ac431b13e.png", "ratio": 1.0}, "frp2": {"src": "assets/extracted_embedded/embedded_9056bf63e0db.webp", "ratio": 1.3167883211678832}, "agency1": {"src": "assets/extracted_embedded/embedded_56a76c9a6fcf.png", "ratio": 4.830188679245283}, "agency2": {"src": "assets/extracted_embedded/embedded_a0e6353a12d9.jpg", "ratio": 1.0}, "agency3": {"src": "assets/extracted_embedded/embedded_3f160ae5814a.jpg", "ratio": 2.628205128205128}};
 ASSETS['bgAlt1'] = {src: 'assets/extracted_embedded/embedded_f09ecd25396f.jpg', ratio: 1.7916666666666667};
-ASSETS['bgAlt2'] = {src: 'assets/official_cover_alt_neon_court.jpg', ratio: 1.7917760279965005,
-  "masterLogoOfficial": {"src": "assets/master_logo_official.png", "ratio": 1.7662037037037037},
-  "officialBg": {"src": "assets/official_announcement_bg_landscape.jpg", "ratio": 1.7917760279965005},
-  "bgAlt1": {"src": "assets/announcement_logo_default.jpg", "ratio": 1.0},
-  "bgAlt2": {"src": "assets/official_announcement_bg_story.jpg", "ratio": 0.74658203125},
-  "bgAlt3": {"src": "assets/official_announcement_bg_social.jpg", "ratio": 1.3394375408763899},
-  "bgAlt4": {"src": "assets/official_announcement_bg_poster.jpg", "ratio": 0.74658203125},
-  "bgAlt5": {"src": "assets/official_announcement_bg_square.jpg", "ratio": 1.0}
-};
+ASSETS['bgAlt2'] = {src: 'assets/official_cover_alt_neon_court.jpg', ratio: 1.7917760279965005};
+ASSETS['masterLogoOfficial'] = {src: 'assets/master_logo_official.png', ratio: 1.7662037037037037};
+ASSETS['officialBg'] = {src: 'assets/official_announcement_bg_landscape.jpg', ratio: 1.7917760279965005};
+ASSETS['bgAlt3'] = {src: 'assets/official_announcement_bg_social.jpg', ratio: 1.3394375408763899};
+ASSETS['bgAlt4'] = {src: 'assets/official_announcement_bg_poster.jpg', ratio: 0.74658203125};
+ASSETS['bgAlt5'] = {src: 'assets/official_announcement_bg_square.jpg', ratio: 1.0};
 ASSETS['welcomeEventLogo'] = {"src": "assets/welcome_event_logo.png", "ratio": 1.7917133258678613};
 ASSETS['welcomeEventBgLandscape'] = {"src": "assets/welcome_event_bg_landscape.jpg", "ratio": 1.7917760279965005};
 ASSETS['welcomeEventBgStory'] = {"src": "assets/welcome_event_bg_story.jpg", "ratio": 0.55810546875};
@@ -182,7 +179,10 @@ function countryFrameLayout(format, w, h){
   return {x:w*.335, y:h*.14, w:w*.63, h:h*.575};
 }
 function esc(s){ return String(s ?? '').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
-function assetSrc(k){ return ASSETS[k]?.src || ''; }
+function assetSrc(k){
+  const src = ASSETS[k]?.src || '';
+  return window.ASSET_DATA && window.ASSET_DATA[src] ? window.ASSET_DATA[src] : src;
+}
 function assetRatio(k){ return ASSETS[k]?.ratio || 1; }
 function getPath(path){ return path.split('.').reduce((acc,key)=>acc[key], state); }
 function setPath(path,val){ const parts=path.split('.'); let ref=state; for(let i=0;i<parts.length-1;i++) ref=ref[parts[i]]; ref[parts[parts.length-1]]=val; }
@@ -1304,7 +1304,109 @@ function attachStageEvents(){
   };
 }
 function download(filename,text,mime){ const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([text],{type:mime})); a.download=filename; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),1000); }
+function downloadUrl(filename,url){ const a=document.createElement('a'); a.href=url; a.download=filename; a.click(); }
 function exportSvg(){ rememberCurrentFormatState(); download(`padbol-${currentTemplate}-${state.format}.svg`, generateSvg(false), 'image/svg+xml'); }
-function exportPng(){ rememberCurrentFormatState(); const svg=generateSvg(false); const [w,h]=dims(state.format); const img=new Image(); img.onload=()=>{ const c=document.createElement('canvas'); c.width=w; c.height=h; const ctx=c.getContext('2d'); ctx.clearRect(0,0,w,h); ctx.drawImage(img,0,0,w,h); const a=document.createElement('a'); a.download=`padbol-${currentTemplate}-${state.format}.png`; a.href=c.toDataURL('image/png'); a.click(); }; img.onerror=(err)=>{ console.error('PNG export failed', err); alert('PNG export failed. Try Export SVG or reload and export again.'); }; img.src='data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg); }
+
+function fileToDataUrl(blob){
+  return new Promise((resolve,reject)=>{
+    const r=new FileReader();
+    r.onload=()=>resolve(r.result);
+    r.onerror=reject;
+    r.readAsDataURL(blob);
+  });
+}
+
+async function inlineSvgImages(svg){
+  const urls=[...new Set([...svg.matchAll(/href="([^"]+)"/g)].map(m=>m[1]).filter(u=>u && !u.startsWith('data:') && !u.startsWith('#')))];
+  for(const url of urls){
+    try{
+      const src = window.ASSET_DATA && window.ASSET_DATA[url] ? window.ASSET_DATA[url] : url;
+      const res = await fetch(src);
+      const data = await fileToDataUrl(await res.blob());
+      svg = svg.split(`href="${url}"`).join(`href="${data}"`);
+    }catch(e){
+      console.warn('Could not inline image for export:', url, e);
+    }
+  }
+  return svg;
+}
+
+async function svgToCanvas(){
+  rememberCurrentFormatState();
+  const [w,h]=dims(state.format);
+  const svg=await inlineSvgImages(generateSvg(false));
+  const blob=new Blob([svg],{type:'image/svg+xml;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const img=new Image();
+
+  await new Promise((resolve,reject)=>{
+    img.onload=resolve;
+    img.onerror=reject;
+    img.src=url;
+  });
+
+  const c=document.createElement('canvas');
+  c.width=w;
+  c.height=h;
+  const ctx=c.getContext('2d');
+  ctx.clearRect(0,0,w,h);
+  ctx.drawImage(img,0,0,w,h);
+  URL.revokeObjectURL(url);
+  return c;
+}
+
+async function exportPng(){
+  try{
+    const c=await svgToCanvas();
+    downloadUrl(`padbol-${currentTemplate}-${state.format}.png`, c.toDataURL('image/png'));
+  }catch(err){
+    console.error('PNG export failed', err);
+    alert('PNG export failed. Check console.');
+  }
+}
+
+async function exportJpg(){
+  try{
+    const c=await svgToCanvas();
+    downloadUrl(`padbol-${currentTemplate}-${state.format}.jpg`, c.toDataURL('image/jpeg',0.95));
+  }catch(err){
+    console.error('JPG export failed', err);
+    alert('JPG export failed. Check console.');
+  }
+}
+
+async function exportPdf(){
+  try{
+    const c=await svgToCanvas();
+    const [w,h]=dims(state.format);
+    const jsPDFClass = window.jspdf && window.jspdf.jsPDF;
+    if(!jsPDFClass){ alert('PDF library not loaded.'); return; }
+    const pdf=new jsPDFClass({orientation:w>=h?'landscape':'portrait',unit:'px',format:[w,h]});
+    pdf.addImage(c.toDataURL('image/png'),'PNG',0,0,w,h);
+    pdf.save(`padbol-${currentTemplate}-${state.format}.pdf`);
+  }catch(err){
+    console.error('PDF export failed', err);
+    alert('PDF export failed. Check console.');
+  }
+}
 function resetCurrentEditor(){ resetStateFor(currentTemplate); buildForm(); renderStage(); }
 document.addEventListener('DOMContentLoaded',()=>{ window.__padbolGridEnabled = localStorage.getItem('padbolGridEnabled')==='1'; syncGridToggle(); $('menuLogo').src=assetSrc('logo1'); document.querySelectorAll('.menuCard').forEach(btn=>btn.addEventListener('click',()=>openEditor(btn.dataset.template))); $('backMenu').addEventListener('click',()=>{ $('editorScreen').classList.add('hidden'); $('menuScreen').classList.remove('hidden'); }); $('resetCurrent').addEventListener('click',resetCurrentEditor); $('exportPreset').addEventListener('click',exportPreset); $('importPreset').addEventListener('click',()=> $('presetFileInput').click()); $('presetFileInput').addEventListener('change',e=>{ importPresetFromFile(e.target.files[0]); e.target.value=''; }); $('exportSvg').addEventListener('click',exportSvg); $('exportPng').addEventListener('click',exportPng); });
+
+document.addEventListener('DOMContentLoaded',()=>{
+  const pngBtn=document.getElementById('exportPng');
+  if(pngBtn && !document.getElementById('exportJpg')){
+    const jpg=document.createElement('button');
+    jpg.id='exportJpg';
+    jpg.type='button';
+    jpg.textContent='Export JPG';
+    jpg.addEventListener('click',exportJpg);
+    pngBtn.insertAdjacentElement('afterend',jpg);
+
+    const pdf=document.createElement('button');
+    pdf.id='exportPdf';
+    pdf.type='button';
+    pdf.textContent='Export PDF';
+    pdf.addEventListener('click',exportPdf);
+    jpg.insertAdjacentElement('afterend',pdf);
+  }
+});
