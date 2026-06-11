@@ -1305,7 +1305,29 @@ function attachStageEvents(){
 }
 function download(filename,text,mime){ const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([text],{type:mime})); a.download=filename; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),1000); }
 function downloadUrl(filename,url){ const a=document.createElement('a'); a.href=url; a.download=filename; a.click(); }
-function exportSvg(){ rememberCurrentFormatState(); download(`padbol-${currentTemplate}-${state.format}.svg`, generateSvg(false), 'image/svg+xml'); }
+async function exportSvg(){
+  try{
+    rememberCurrentFormatState();
+    let svg = generateSvg(false);
+
+    if (typeof inlineSvgImages === "function") {
+      svg = await inlineSvgImages(svg);
+    }
+
+    if (!svg.includes('xmlns="http://www.w3.org/2000/svg"')) {
+      svg = svg.replace("<svg", '<svg xmlns="http://www.w3.org/2000/svg"');
+    }
+
+    if (!svg.includes('xmlns:xlink=')) {
+      svg = svg.replace("<svg", '<svg xmlns:xlink="http://www.w3.org/1999/xlink"');
+    }
+
+    download(`padbol-${currentTemplate}-${state.format}.svg`, svg, "image/svg+xml;charset=utf-8");
+  }catch(err){
+    console.error("SVG export failed", err);
+    alert("SVG export failed. Check console.");
+  }
+}
 
 function fileToDataUrl(blob){
   return new Promise((resolve,reject)=>{
