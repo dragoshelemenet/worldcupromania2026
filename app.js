@@ -1375,20 +1375,75 @@ async function exportJpg(){
   }
 }
 
+
 async function exportPdf(){
   try{
-    const c=await svgToCanvas();
-    const [w,h]=dims(state.format);
+    rememberCurrentFormatState();
+
+    const [w,h] = dims(state.format);
+    let svgText = generateSvg(false);
+
+    if (typeof inlineSvgImages === "function") {
+      svgText = await inlineSvgImages(svgText);
+    }
+
+    const parser = new DOMParser();
+    const svgDoc = parser.parseFromString(svgText, "image/svg+xml");
+    const svgEl = svgDoc.documentElement;
+
+    svgEl.setAttribute("width", w);
+    svgEl.setAttribute("height", h);
+    svgEl.setAttribute("viewBox", `0 0 ${w} ${h}`);
+
     const jsPDFClass = window.jspdf && window.jspdf.jsPDF;
-    if(!jsPDFClass){ alert('PDF library not loaded.'); return; }
-    const pdf=new jsPDFClass({orientation:w>=h?'landscape':'portrait',unit:'px',format:[w,h]});
-    pdf.addImage(c.toDataURL('image/png'),'PNG',0,0,w,h);
+    if (!jsPDFClass) {
+      alert("PDF library not loaded. Refresh and try again.");
+      return;
+    }
+
+    const pdf = new jsPDFClass({
+      orientation: w >= h ? "landscape" : "portrait",
+      unit: "px",
+      format: [w, h],
+      compress: true
+    });
+
+    if (window.svg2pdf) {
+      await window.svg2pdf(svgEl, pdf, {
+        x: 0,
+        y: 0,
+        width: w,
+        height: h
+      });
+      pdf.save(`padbol-${currentTemplate}-${state.format}.pdf`);
+      return;
+    }
+
+    const canvas = document.createElement("canvas");
+    canvas.width = w * 3;
+    canvas.height = h * 3;
+    const ctx = canvas.getContext("2d");
+    const blob = new Blob([svgText], {type:"image/svg+xml;charset=utf-8"});
+    const url = URL.createObjectURL(blob);
+    const img = new Image();
+
+    await new Promise((resolve,reject)=>{
+      img.onload = resolve;
+      img.onerror = reject;
+      img.src = url;
+    });
+
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    URL.revokeObjectURL(url);
+
+    pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, w, h);
     pdf.save(`padbol-${currentTemplate}-${state.format}.pdf`);
   }catch(err){
-    console.error('PDF export failed', err);
-    alert('PDF export failed. Check console.');
+    console.error("PDF export failed", err);
+    alert("PDF export failed. Open console for details.");
   }
 }
+
 function resetCurrentEditor(){ resetStateFor(currentTemplate); buildForm(); renderStage(); }
 document.addEventListener('DOMContentLoaded',()=>{ window.__padbolGridEnabled = localStorage.getItem('padbolGridEnabled')==='1'; syncGridToggle(); $('menuLogo').src=assetSrc('logo1'); document.querySelectorAll('.menuCard').forEach(btn=>btn.addEventListener('click',()=>openEditor(btn.dataset.template))); $('backMenu').addEventListener('click',()=>{ $('editorScreen').classList.add('hidden'); $('menuScreen').classList.remove('hidden'); }); $('resetCurrent').addEventListener('click',resetCurrentEditor); $('exportPreset').addEventListener('click',exportPreset); $('importPreset').addEventListener('click',()=> $('presetFileInput').click()); $('presetFileInput').addEventListener('change',e=>{ importPresetFromFile(e.target.files[0]); e.target.value=''; }); $('exportSvg').addEventListener('click',exportSvg); $('exportPng').addEventListener('click',exportPng); });
 
