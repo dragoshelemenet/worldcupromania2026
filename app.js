@@ -1408,8 +1408,12 @@ async function exportPdf(){
       compress: true
     });
 
-    if (window.svg2pdf) {
-      await window.svg2pdf(svgEl, pdf, {
+    const svg2pdfFn =
+      (window.svg2pdf && window.svg2pdf.svg2pdf) ||
+      window.svg2pdf;
+
+    if (typeof svg2pdfFn === "function") {
+      await svg2pdfFn(svgEl, pdf, {
         x: 0,
         y: 0,
         width: w,
