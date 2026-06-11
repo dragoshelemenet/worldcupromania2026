@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Padbol World Cup Romania 2026 — Editor</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<section id="menuScreen" class="menuScreen">
+  <div class="menuShell">
+    <img id="menuLogo" class="menuLogo" alt="Padbol World Cup Romania 2026" />
+    <h1>Padbol World Cup Romania 2026</h1>
+    <p>Select the template you want to edit</p>
+    <div class="menuGrid">
+      <button class="menuCard" data-template="master"><div class="menuCardTop"><span class="menuIcon">🖼</span><span class="menuIndex">01</span></div><strong>Official Cover</strong><small>Main cover poster</small></button>
+      <button class="menuCard" data-template="announcement"><div class="menuCardTop"><span class="menuIcon">📣</span><span class="menuIndex">02</span></div><strong>Official Announcement</strong><small>Official announcement poster</small></button>
+      <button class="menuCard" data-template="officialPoster"><div class="menuCardTop"><span class="menuIcon">🪧</span><span class="menuIndex">03</span></div><strong>Official Poster</strong><small>Poster-only official layout</small></button>
+      <button class="menuCard" data-template="welcome"><div class="menuCardTop"><span class="menuIcon">🏟</span><span class="menuIndex">04</span></div><strong>Official Event</strong><small>Official event poster</small></button>
+      <button class="menuCard" data-template="country"><div class="menuCardTop"><span class="menuIcon">🌍</span><span class="menuIndex">05</span></div><strong>Country Confirmed</strong><small>Country / team confirmation</small></button>
+      <button class="menuCard" data-template="player"><div class="menuCardTop"><span class="menuIcon">👤</span><span class="menuIndex">06</span></div><strong>Player Announcement</strong><small>Player announcement card</small></button>
+      <button class="menuCard" data-template="bio"><div class="menuCardTop"><span class="menuIcon">📝</span><span class="menuIndex">07</span></div><strong>Player Profile</strong><small>Player bio + palmares card</small></button>
+    </div>
+  </div>
+</section>
+<section id="editorScreen" class="hidden">
+  <header class="topbar">
+    <button id="backMenu" class="secondary">← Menu</button>
+    <div class="editorHeading">
+      <h1 id="editorTitle">Editor</h1>
+      <p id="editorSubtitle">Separate editor for the selected template</p>
+    </div>
+    <div class="actions">
+      <button id="resetCurrent" class="secondary">Reset</button>
+      <button id="exportPreset" class="secondary">Export Preset</button>
+      <button id="importPreset" class="secondary">Import Preset</button>
+      <input id="presetFileInput" type="file" accept="application/json,.json" class="hidden">
+      <button id="exportPng">Export PNG</button>
+      <button id="exportSvg" class="secondary">Export SVG</button>
+    </div>
+  </header>
+  <main class="editorLayout">
+    <aside class="panel"><div id="formHost"></div></aside>
+    <section class="stageWrap">
+      <div class="stageHead">
+        <div>
+          <div class="stageTitleRow"><div class="stageTitle">Preview</div><label class="gridToggle"><input type="checkbox" id="gridToggle"> Grid</label></div>
+          <div class="stageSub" id="stageHint">Click to select. Double click text to edit. Add image from menu on left. Single click the player photo area to upload / replace it.</div>
+        </div>
+        <div id="quickFormats" class="quickFormats"></div>
+      </div>
+      <div id="stage" class="stage"></div>
+      <div id="assetShelf" class="assetShelf"></div>
+    </section>
+  </main>
+</section>
+<script src="app.js"></script>
+</body>
+</html>
