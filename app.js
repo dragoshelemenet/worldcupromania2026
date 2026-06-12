@@ -1627,3 +1627,98 @@ document.addEventListener('DOMContentLoaded',()=>{
     jpg.insertAdjacentElement('afterend',pdf);
   }
 });
+
+// FORCE DEFAULT COUNTRY CONFIRMED LAYOUT
+(function(){
+  const countryConfirmedDefaults = {
+    landscape: {
+      format:'landscape',
+      backgroundPreset:'countryBgMain',
+      titleLines:'TEAM\nCONFIRMED',
+      country:'Libya',
+      footerTop:'PADBOL WORLD CUP ROMANIA 2026',
+      footerBottom:'SEE YOU IN ROMANIA',
+      hashtag:'#RomaniaWelcomesTheWorld',
+      styles:{
+        titleLines:{x:14.99,y:46.44,size:6.2,scale:1.29,anchor:'middle',maxW:24,gradient:true,gradientStart:'#b78723',gradientEnd:'#f7dd8b',outline:true,outlineWidth:1.3,outlineColor:'#1d1203',shadow:true,shadowDx:.65,shadowDy:.85,shadowBlur:1.7,shadowColor:'#0c0b10'},
+        country:{x:68.5,y:76.3,size:8.8,scale:1,anchor:'middle',maxW:54,outline:true,outlineWidth:2.6,outlineColor:'#b78628',shadow:true,shadowDx:.7,shadowDy:.9,shadowBlur:1.9,shadowColor:'#0c0b10'},
+        footerTop:{x:4.8,y:89.56,size:4,scale:1,anchor:'start',maxW:48},
+        footerBottom:{x:4.8,y:95.5,size:4.8,scale:1,anchor:'start',maxW:42},
+        hashtag:{x:95.59,y:79.36,size:3,scale:1,anchor:'end',maxW:34,gradient:true,gradientStart:'#b78723',gradientEnd:'#f7dd8b',shadow:true,shadowDx:.5,shadowDy:.6,shadowBlur:1.2,shadowColor:'#051127'}
+      },
+      mainLogo:{preset:'logo1',useCustom:false,show:true,x:15.14,y:21.27,w:26.69,outline:false,outlineWidth:0,outlineColor:'#ffffff'},
+      countryOverlay:{show:true,opacity:.16,x:63.93,y:37.55,w:24.54},
+      countryFigure:{show:true,preset:'countryFigure1',x:48.65,y:49.18,w:24.54,opacity:.88},
+      frp:{preset:'frp1',useCustom:false,show:true,x:70.82,y:91.31,w:10.89,outline:false,outlineWidth:0,outlineColor:'#ffffff'},
+      agency:{preset:'agency3',useCustom:false,show:true,x:87.28,y:89.49,w:18.32,outline:false,outlineWidth:0,outlineColor:'#ffffff'},
+      customTexts:[],
+      flagCode:'ly',
+      flagName:'Libya',
+      countryAccent:'#f7f7f7'
+    }
+  };
+
+  countryConfirmedDefaults.square = deepMerge(clone(countryConfirmedDefaults.landscape), {
+    format:'square',
+    styles:{
+      titleLines:{x:49.07,y:41.73,size:5.4,scale:1.38},
+      country:{x:49.75,y:71.78,size:7.7,scale:1.1},
+      footerTop:{x:6.99,y:90.21,size:3},
+      footerBottom:{x:50,y:79.66,size:4,anchor:'middle',maxW:66},
+      hashtag:{x:95,y:95.2,size:2.35}
+    },
+    mainLogo:{x:48.76,y:27.52,w:26.96},
+    countryFigure:{x:27.64,y:54.97,w:25.2},
+    frp:{show:true,x:78.46,y:8.47,w:17.15},
+    agency:{show:true,preset:'agency1',x:29.13,y:8.21,w:30.43}
+  });
+
+  countryConfirmedDefaults.story = deepMerge(clone(countryConfirmedDefaults.landscape), {
+    format:'story',
+    styles:{
+      titleLines:{x:50.23,y:19.38,size:4.2,scale:.86,maxW:42},
+      country:{x:4.01,y:84.43,size:6.2,scale:1.38,anchor:'start',maxW:92,outlineWidth:1.6,outlineColor:'#ffffff',gradient:true,gradientStart:'#153d92',gradientEnd:'#2a66c9',shadowColor:'#102246'},
+      footerTop:{x:4.4,y:90.6,size:2.55,maxW:74},
+      footerBottom:{x:4.4,y:95,size:3.35,maxW:78},
+      hashtag:{x:95,y:96.3,size:2.15,maxW:42,gradientStart:'#153d92',gradientEnd:'#2a66c9'}
+    },
+    mainLogo:{x:50,y:13.2,w:31.5},
+    countryFigure:{x:40.78,y:43.18,w:49.73},
+    frp:{show:false},
+    agency:{show:false}
+  });
+
+  countryConfirmedDefaults.social = deepMerge(clone(countryConfirmedDefaults.landscape), {
+    format:'social',
+    styles:{
+      titleLines:{x:73.66,y:19.23,size:5,scale:1,maxW:28},
+      country:{x:32.34,y:72.86,size:6.8,scale:1.2,maxW:42},
+      footerTop:{x:8,y:88.6,size:3,maxW:58},
+      footerBottom:{x:8,y:94,size:4,maxW:58},
+      hashtag:{x:95,y:92.5,size:2.45,maxW:38}
+    },
+    mainLogo:{x:22.89,y:24.64,w:26},
+    countryFigure:{x:40.78,y:43.18,w:49.73},
+    frp:{show:false},
+    agency:{show:false}
+  });
+
+  countryConfirmedDefaults.poster = deepMerge(clone(countryConfirmedDefaults.landscape), {
+    format:'poster',
+    styles:{
+      titleLines:{x:50,y:20.8,size:4,scale:.9,maxW:42},
+      country:{x:4.2,y:84.2,size:6.5,scale:1.24,anchor:'start',maxW:90,outlineWidth:1.5,outlineColor:'#ffffff',gradient:true,gradientStart:'#153d92',gradientEnd:'#2a66c9',shadowColor:'#102246'},
+      footerTop:{x:4.8,y:90.3,size:2.55,maxW:72},
+      footerBottom:{x:4.8,y:94.8,size:3.35,maxW:78},
+      hashtag:{x:95,y:96,size:2.05,maxW:42,gradientStart:'#153d92',gradientEnd:'#2a66c9'}
+    },
+    mainLogo:{x:50,y:12.8,w:28.2},
+    countryFigure:{x:39.5,y:43.8,w:48},
+    frp:{show:false},
+    agency:{show:false}
+  });
+
+  TEMPLATE_DEFAULTS.country = clone(countryConfirmedDefaults.landscape);
+  RESPONSIVE_PRESETS.country = countryConfirmedDefaults;
+  templateFormatMemory.country = clone(countryConfirmedDefaults);
+})();
