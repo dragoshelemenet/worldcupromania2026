@@ -107,7 +107,7 @@ const COUNTRY_FIGURE_OPTIONS = [
 ];
 const imageStore = {photo:null, welcomeBg:null, posterBg:null, playerBg:null, countryBg:null, playerPhoto:null, flag:null, customMainLogo:null, customFrpLogo:null, customAgencyLogo:null, extraAsset1:null, extraAsset2:null};
 const LOGO_PRESETS = {
-  mainLogo:[{value:'logo1',label:'Main logo — official transparent white (default)'},{value:'announcementLogo',label:'Official announcement logo'},{value:'officialPosterLogo',label:'Official poster logo'},{value:'logo2',label:'Transparent dark text'},{value:'logo3',label:'Blue background preview'},{value:'logo4',label:'White background preview'}],
+  mainLogo:[{value:'logo1',label:'Main logo — official transparent white (default)'},{value:'announcementLogo',label:'Official announcement logo'},{value:'officialPosterLogo',label:'Official poster logo'},{value:'logo2',label:'Transparent dark text'},{value:'logo3',label:'Blue background preview'},{value:'logo4',label:'White background preview'},{value:'fipaWhiteLogo',label:'FIPA White Logo'},{value:'primaSportLogo',label:'Prima Sport Logo'}],
   frp:[{value:'none',label:'None / hide this logo'},{value:'frp1',label:'FRP Option 1'},{value:'frp2',label:'FRP Option 2'},{value:'fipaWhiteLogo',label:'FIPA White Logo'},{value:'primaSportLogo',label:'Prima Sport Logo'}],
   agency:[{value:'none',label:'None / hide this logo'},{value:'agency1',label:'Agency Option 1 — official lockup (default)'},{value:'agency2',label:'Agency Option 2 — square seal'},{value:'agency3',label:'Agency Option 3 — full lockup'},{value:'fipaWhiteLogo',label:'FIPA White Logo'},{value:'primaSportLogo',label:'Prima Sport Logo'}]
 };
