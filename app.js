@@ -107,9 +107,31 @@ const COUNTRY_FIGURE_OPTIONS = [
 ];
 const imageStore = {photo:null, welcomeBg:null, posterBg:null, playerBg:null, countryBg:null, playerPhoto:null, flag:null, customMainLogo:null, customFrpLogo:null, customAgencyLogo:null, extraAsset1:null, extraAsset2:null};
 const LOGO_PRESETS = {
-  mainLogo:[{value:'logo1',label:'Main logo — official transparent white (default)'},{value:'announcementLogo',label:'Official announcement logo'},{value:'officialPosterLogo',label:'Official poster logo'},{value:'logo2',label:'Transparent dark text'},{value:'logo3',label:'Blue background preview'},{value:'logo4',label:'White background preview'},{value:'fipaWhiteLogo',label:'FIPA White Logo'},{value:'primaSportLogo',label:'Prima Sport Logo'}],
-  frp:[{value:'none',label:'None / hide this logo'},{value:'frp1',label:'FRP Option 1'},{value:'frp2',label:'FRP Option 2'},{value:'fipaWhiteLogo',label:'FIPA White Logo'},{value:'primaSportLogo',label:'Prima Sport Logo'}],
-  agency:[{value:'none',label:'None / hide this logo'},{value:'agency1',label:'Agency Option 1 — official lockup (default)'},{value:'agency2',label:'Agency Option 2 — square seal'},{value:'agency3',label:'Agency Option 3 — full lockup'},{value:'fipaWhiteLogo',label:'FIPA White Logo'},{value:'primaSportLogo',label:'Prima Sport Logo'}]
+  mainLogo:[
+    {value:'logo1',label:'Main logo — official transparent white (default)'},
+    {value:'announcementLogo',label:'Official announcement logo'},
+    {value:'officialPosterLogo',label:'Official poster logo'},
+    {value:'logo2',label:'Transparent dark text'},
+    {value:'logo3',label:'Blue background preview'},
+    {value:'logo4',label:'White background preview'},
+    {value:'fipaWhiteLogo',label:'FIPA White Logo'},
+    {value:'primaSportLogo',label:'Prima Sport Logo'}
+  ],
+  frp:[
+    {value:'none',label:'None / hide this logo'},
+    {value:'frp1',label:'FRP Option 1'},
+    {value:'frp2',label:'FRP Option 2'},
+    {value:'fipaWhiteLogo',label:'FIPA White Logo'},
+    {value:'primaSportLogo',label:'Prima Sport Logo'}
+  ],
+  agency:[
+    {value:'none',label:'None / hide this logo'},
+    {value:'agency1',label:'Agency Option 1 — official lockup (default)'},
+    {value:'agency2',label:'Agency Option 2 — square seal'},
+    {value:'agency3',label:'Agency Option 3 — full lockup'},
+    {value:'fipaWhiteLogo',label:'FIPA White Logo'},
+    {value:'primaSportLogo',label:'Prima Sport Logo'}
+  ]
 };
 const FLAG_LIST = [{"code": "ly", "name": "Libya", "search": "Libya Libya LY"}, {"code": "ar", "name": "Argentina", "search": "Argentina Argentina AR"}, {"code": "de", "name": "Germany", "search": "Germany Germany DE"}, {"code": "at", "name": "Austria", "search": "Austria Austria AT"}, {"code": "qa", "name": "Qatar", "search": "Qatar Qatar QA"}, {"code": "ro", "name": "Romania", "search": "Romania Romania RO"}, {"code": "br", "name": "Brazil", "search": "Brazil Brazil BR"}, {"code": "es", "name": "Spain", "search": "Spain Spain ES"}, {"code": "se", "name": "Sweden", "search": "Sweden Sweden SE"}, {"code": "pt", "name": "Portugal", "search": "Portugal Portugal PT"}, {"code": "bg", "name": "Bulgaria", "search": "Bulgaria Bulgary BG"}, {"code": "it", "name": "Italy", "search": "Italy Italy IT"}, {"code": "be", "name": "Belgium", "search": "Belgium Belgium BE"}, {"code": "hr", "name": "Croatia", "search": "Croatia Croatia HR"}, {"code": "ir", "name": "Iran", "search": "Iran Iran IR"}, {"code": "ae", "name": "United Arab Emirates", "search": "United Arab Emirates UAE AE"}, {"code": "cl", "name": "Chile", "search": "Chile Chile CL"}, {"code": "mx", "name": "Mexico", "search": "Mexico Mexico MX"}, {"code": "co", "name": "Colombia", "search": "Colombia Colombia CO"}, {"code": "fr", "name": "France", "search": "France France FR"}, {"code": "cy", "name": "Cyprus", "search": "Cyprus Cyprus CY"}];
 ASSETS['bioPhotoGoldFrame'] = {src:'assets/extracted_embedded/embedded_9f7fb6da822d.png', ratio:1};
