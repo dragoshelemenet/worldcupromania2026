@@ -1,0 +1,86 @@
+[
+  {
+    "country": "LIBYA",
+    "file": "presets/confirmed-countries/country-confirmed-libya.json"
+  },
+  {
+    "country": "ARGENTINA",
+    "file": "presets/confirmed-countries/country-confirmed-argentina.json"
+  },
+  {
+    "country": "GERMANY",
+    "file": "presets/confirmed-countries/country-confirmed-germany.json"
+  },
+  {
+    "country": "AUSTRIA",
+    "file": "presets/confirmed-countries/country-confirmed-austria.json"
+  },
+  {
+    "country": "QATAR",
+    "file": "presets/confirmed-countries/country-confirmed-qatar.json"
+  },
+  {
+    "country": "ROMANIA",
+    "file": "presets/confirmed-countries/country-confirmed-romania.json"
+  },
+  {
+    "country": "BRAZIL",
+    "file": "presets/confirmed-countries/country-confirmed-brazil.json"
+  },
+  {
+    "country": "SPAIN",
+    "file": "presets/confirmed-countries/country-confirmed-spain.json"
+  },
+  {
+    "country": "SWEDEN",
+    "file": "presets/confirmed-countries/country-confirmed-sweden.json"
+  },
+  {
+    "country": "PORTUGAL",
+    "file": "presets/confirmed-countries/country-confirmed-portugal.json"
+  },
+  {
+    "country": "BULGARY",
+    "file": "presets/confirmed-countries/country-confirmed-bulgary.json"
+  },
+  {
+    "country": "ITALY",
+    "file": "presets/confirmed-countries/country-confirmed-italy.json"
+  },
+  {
+    "country": "BELGIUM",
+    "file": "presets/confirmed-countries/country-confirmed-belgium.json"
+  },
+  {
+    "country": "CROATIA",
+    "file": "presets/confirmed-countries/country-confirmed-croatia.json"
+  },
+  {
+    "country": "IRAN",
+    "file": "presets/confirmed-countries/country-confirmed-iran.json"
+  },
+  {
+    "country": "UAE",
+    "file": "presets/confirmed-countries/country-confirmed-uae.json"
+  },
+  {
+    "country": "CHILE",
+    "file": "presets/confirmed-countries/country-confirmed-chile.json"
+  },
+  {
+    "country": "MEXICO",
+    "file": "presets/confirmed-countries/country-confirmed-mexico.json"
+  },
+  {
+    "country": "COLOMBIA",
+    "file": "presets/confirmed-countries/country-confirmed-colombia.json"
+  },
+  {
+    "country": "FRANCE",
+    "file": "presets/confirmed-countries/country-confirmed-france.json"
+  },
+  {
+    "country": "CYPRUS",
+    "file": "presets/confirmed-countries/country-confirmed-cyprus.json"
+  }
+]
