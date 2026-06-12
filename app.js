@@ -1,5 +1,5 @@
 const $ = id => document.getElementById(id);
-const ASSETS = {"logo1": {"src": "assets/logo_main_transparent_white.png", "ratio": 1.0}, "logo2": {"src": "assets/extracted_embedded/embedded_07ff6495652e.png", "ratio": 1.0}, "logo3": {"src": "assets/extracted_embedded/embedded_d9d860717b92.jpg", "ratio": 1.0}, "logo4": {"src": "assets/extracted_embedded/embedded_11e7226f3f1c.jpg", "ratio": 1.0}, "officialBg": {"src": "assets/extracted_embedded/embedded_f9eea3b90fa6.png", "ratio": 1.7768331562167907}, "frp1": {"src": "assets/extracted_embedded/embedded_028ac431b13e.png", "ratio": 1.0}, "frp2": {"src": "assets/extracted_embedded/embedded_9056bf63e0db.webp", "ratio": 1.3167883211678832}, "agency1": {"src": "assets/extracted_embedded/embedded_56a76c9a6fcf.png", "ratio": 4.830188679245283}, "agency2": {"src": "assets/extracted_embedded/embedded_a0e6353a12d9.jpg", "ratio": 1.0}, "agency3": {"src": "assets/extracted_embedded/embedded_3f160ae5814a.jpg", "ratio": 2.628205128205128}};
+const ASSETS = {"logo1": {"src": "assets/logo_main_transparent_white (2).png", "ratio": 1.0}, "logo2": {"src": "assets/extracted_embedded/embedded_07ff6495652e.png", "ratio": 1.0}, "logo3": {"src": "assets/extracted_embedded/embedded_d9d860717b92.jpg", "ratio": 1.0}, "logo4": {"src": "assets/extracted_embedded/embedded_11e7226f3f1c.jpg", "ratio": 1.0}, "officialBg": {"src": "assets/extracted_embedded/embedded_f9eea3b90fa6.png", "ratio": 1.7768331562167907}, "frp1": {"src": "assets/extracted_embedded/embedded_028ac431b13e.png", "ratio": 1.0}, "frp2": {"src": "assets/extracted_embedded/embedded_9056bf63e0db.webp", "ratio": 1.3167883211678832}, "agency1": {"src": "assets/extracted_embedded/embedded_56a76c9a6fcf.png", "ratio": 4.830188679245283}, "agency2": {"src": "assets/extracted_embedded/embedded_a0e6353a12d9.jpg", "ratio": 1.0}, "agency3": {"src": "assets/extracted_embedded/embedded_3f160ae5814a.jpg", "ratio": 2.628205128205128}};
 ASSETS['bgAlt1'] = {src: 'assets/extracted_embedded/embedded_f09ecd25396f.jpg', ratio: 1.7916666666666667};
 ASSETS['bgAlt2'] = {src: 'assets/official_cover_alt_neon_court.jpg', ratio: 1.7917760279965005};
 ASSETS['masterLogoOfficial'] = {src: 'assets/master_logo_official.png', ratio: 1.7662037037037037};
@@ -67,7 +67,7 @@ const ANNOUNCEMENT_BG_OPTIONS = [
   {key:'announcementBgSquare', label:'Square default', note:'Best for 1:1 square', formats:['square']},
   {key:'announcementBgSocial', label:'Feed default', note:'Best for 4:5 feed', formats:['social']}
 ];
-ASSETS['logo1'] = {src:'assets/logo_main_transparent_white.png', ratio: 1};
+ASSETS['logo1'] = {src:'assets/logo_main_transparent_white (2).png', ratio: 1};
 ASSETS['logo2'] = {src:'assets/logo_main_transparent_dark.png', ratio: 1};
 ASSETS['logo3'] = {src:'assets/logo_main_blue_bg.jpg', ratio: 1};
 ASSETS['logo4'] = {src:'assets/logo_main_white_bg.jpg', ratio: 1};
