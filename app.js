@@ -27,7 +27,7 @@ const TEMPLATE_DEFAULTS = {
   announcement: { format:'landscape', backgroundPreset:'announcementBgLandscape', headline:'PADBOL\nWORLD CUP\nROMANIA 2026', hostedText:'OFFICIAL ANNOUNCEMENT', hashtag:'#PadbolWorldCupRomania2026', agencySupportText:'', styles:{ headline:{x:5.5,y:17.5,size:9.6,scale:1,anchor:'start',maxW:42}, hostedText:{x:5.5,y:67,size:5.0,scale:1,anchor:'start',maxW:44}, hashtag:{x:5.5,y:79,size:2.6,scale:1,anchor:'start',maxW:46}, agencySupportText:{x:92,y:97,size:1.8,scale:1,anchor:'end',maxW:30} }, mainLogo:{preset:'announcementLogo',useCustom:false,show:true,x:91.5,y:13,w:14.5,outline:false,outlineWidth:0,outlineColor:'#ffffff'}, frp:{preset:'frp1',useCustom:false,show:false,x:10,y:12,w:13,outline:false,outlineWidth:0,outlineColor:'#ffffff'}, agency:{preset:'agency1',useCustom:false,show:false,x:90,y:10,w:12,outline:false,outlineWidth:0,outlineColor:'#ffffff'} },
   officialPoster: {"format":"poster","backgroundPreset":"officialPosterBg","welcomeLine":"WELCOME TO","titleLines":"PADBOL\nWORLD CUP\nROMANIA 2026","subLine":"ROMANIA 2026","venue":"[VENUE NAME]","date":"[EVENT DATE]","website":"WWW.FRPADBOL.RO/WORLDCUPROMANIA2026","hashtag":"#PadbolWorldCupRomania2026","hostedText":"HOSTED BY ROMANIAN PADBOL FEDERATION","styles":{"welcomeLine":{"x":50.76,"y":32.13,"size":4,"scale":1.25,"anchor":"middle","maxW":74,"fontFamily":"Arial Black, Arial, sans-serif","fontWeight":900,"outline":false,"outlineWidth":1.2,"outlineColor":"#000000","shadow":false,"shadowDx":0.5,"shadowDy":0.5,"shadowBlur":1.5,"shadowColor":"#000000","italic":false,"gradient":false,"gradientStart":"#ffffff","gradientEnd":"#ffffff"},"titleLines":{"x":50.18,"y":42.35,"size":7.6,"scale":0.98,"anchor":"middle","maxW":78,"gradient":true,"gradientStart":"#b78723","gradientEnd":"#f7dd8b","outline":true,"outlineWidth":1.4,"outlineColor":"#163878","shadow":true,"shadowDx":4.8,"shadowDy":6,"shadowBlur":4.8,"shadowColor":"#15305f","fontFamily":"Tahoma, Verdana, sans-serif","fontWeight":900,"italic":false},"subLine":{"x":50.25,"y":67.22,"size":4.6,"scale":0.75,"anchor":"middle","maxW":58,"fontFamily":"Arial Black, Arial, sans-serif","fontWeight":900,"outline":false,"outlineWidth":1.2,"outlineColor":"#000000","shadow":false,"shadowDx":0.5,"shadowDy":0.5,"shadowBlur":1.5,"shadowColor":"#000000","italic":false,"gradient":false,"gradientStart":"#ffffff","gradientEnd":"#ffffff"},"venue":{"x":50,"y":75.5,"size":3.3,"scale":1,"anchor":"middle","maxW":58,"gradient":true,"gradientStart":"#b78723","gradientEnd":"#f7dd8b","fontFamily":"Arial Black, Arial, sans-serif","fontWeight":900,"outline":false,"outlineWidth":1.2,"outlineColor":"#000000","shadow":false,"shadowDx":0.5,"shadowDy":0.5,"shadowBlur":1.5,"shadowColor":"#000000","italic":false},"date":{"x":50,"y":80,"size":3.3,"scale":1,"anchor":"middle","maxW":52,"gradient":true,"gradientStart":"#b78723","gradientEnd":"#f7dd8b","fontFamily":"Arial Black, Arial, sans-serif","fontWeight":900,"outline":false,"outlineWidth":1.2,"outlineColor":"#000000","shadow":false,"shadowDx":0.5,"shadowDy":0.5,"shadowBlur":1.5,"shadowColor":"#000000","italic":false},"website":{"x":49.92,"y":89.06,"size":2.3,"scale":1,"anchor":"middle","maxW":62,"fontFamily":"Arial Black, Arial, sans-serif","fontWeight":900,"outline":false,"outlineWidth":1.2,"outlineColor":"#000000","shadow":false,"shadowDx":0.5,"shadowDy":0.5,"shadowBlur":1.5,"shadowColor":"#000000","italic":false,"gradient":false,"gradientStart":"#ffffff","gradientEnd":"#ffffff"},"hashtag":{"x":50.17,"y":91.87,"size":2,"scale":1,"anchor":"middle","maxW":72,"fontFamily":"Arial Black, Arial, sans-serif","fontWeight":900,"outline":false,"outlineWidth":1.2,"outlineColor":"#000000","shadow":false,"shadowDx":0.5,"shadowDy":0.5,"shadowBlur":1.5,"shadowColor":"#000000","italic":false,"gradient":false,"gradientStart":"#ffffff","gradientEnd":"#ffffff"},"hostedText":{"x":50.08,"y":94.6,"size":1.8,"scale":1,"anchor":"middle","maxW":80,"fontFamily":"Arial Black, Arial, sans-serif","fontWeight":900,"outline":false,"outlineWidth":1.2,"outlineColor":"#000000","shadow":false,"shadowDx":0.5,"shadowDy":0.5,"shadowBlur":1.5,"shadowColor":"#000000","italic":false,"gradient":false,"gradientStart":"#ffffff","gradientEnd":"#ffffff"}},"mainLogo":{"preset":"officialPosterLogo","useCustom":false,"show":true,"x":50,"y":15.3,"w":34,"outline":false,"outlineWidth":0,"outlineColor":"#ffffff"},"frp":{"preset":"frp1","useCustom":false,"show":false,"x":25,"y":95,"w":9,"outline":false,"outlineWidth":0,"outlineColor":"#ffffff"},"agency":{"preset":"agency1","useCustom":false,"show":false,"x":58,"y":95,"w":12,"outline":false,"outlineWidth":0,"outlineColor":"#ffffff"}},
   welcome: { format:'landscape', backgroundPreset:'welcomeEventBgLandscape', titleLines:'PADBOL WORLD CUP\nROMANIA 2026', venue:'ROMANIA 2026', date:'OFFICIAL EVENT', website:'#PadbolWorldCupRomania2026', styles:{ titleLines:{x:50,y:35,size:7.8,scale:1,anchor:'middle',maxW:74}, venue:{x:50,y:62,size:5.0,scale:1,anchor:'middle',maxW:48}, date:{x:50,y:72,size:4.8,scale:1,anchor:'middle',maxW:52}, website:{x:50,y:90,size:2.3,scale:1,anchor:'middle',maxW:60} }, mainLogo:{preset:'logo1',useCustom:false,show:true,x:50,y:12,w:20,outline:false,outlineWidth:0,outlineColor:'#ffffff'}, frp:{preset:'frp1',useCustom:false,show:false,x:25,y:95,w:9,outline:false,outlineWidth:0,outlineColor:'#ffffff'}, agency:{preset:'agency1',useCustom:false,show:false,x:58,y:95,w:12,outline:false,outlineWidth:0,outlineColor:'#ffffff'} },
-  country: { format:'landscape', backgroundPreset:'countryBgMain', titleLines:'TEAM\nCONFIRMED', country:'[COUNTRY NAME]', footerTop:'PADBOL WORLD CUP ROMANIA 2026', footerBottom:'SEE YOU IN ROMANIA', hashtag:'#PadbolWorldCupRomania2026', styles:{ titleLines:{x:14.99,y:46.44,size:6.2,scale:1.29,anchor:'middle',maxW:24,gradient:true,gradientStart:'#b78723',gradientEnd:'#f7dd8b',outline:true,outlineWidth:1.3,outlineColor:'#1d1203',shadow:true,shadowDx:.65,shadowDy:.85,shadowBlur:1.7,shadowColor:'#0c0b10'}, country:{x:68.5,y:76.3,size:8.8,scale:1,anchor:'middle',maxW:54,outline:true,outlineWidth:2.6,outlineColor:'#b78628',shadow:true,shadowDx:.7,shadowDy:.9,shadowBlur:1.9,shadowColor:'#0c0b10'}, footerTop:{x:4.8,y:88.2,size:4.0,scale:1,anchor:'start',maxW:48,gradient:false}, footerBottom:{x:4.8,y:95.5,size:4.8,scale:1,anchor:'start',maxW:42,outline:false}, hashtag:{x:95.5,y:92.2,size:3.0,scale:1,anchor:'end',maxW:34,gradient:true,gradientStart:'#b78723',gradientEnd:'#f7dd8b',shadow:true,shadowDx:.5,shadowDy:.6,shadowBlur:1.2,shadowColor:'#051127'} }, mainLogo:{preset:'logo1',useCustom:false,show:true,x:15.14,y:21.27,w:26.69,outline:false,outlineWidth:0,outlineColor:'#ffffff'}, countryOverlay:{show:true,opacity:0.16,x:63.93,y:37.55,w:24.54}, countryFigure:{show:true,preset:'countryFigure1',x:63.93,y:37.55,w:24.54,opacity:0.88}, frp:{preset:'frp1',useCustom:false,show:false,x:12,y:10,w:12,outline:false,outlineWidth:0,outlineColor:'#ffffff'}, agency:{preset:'agency1',useCustom:false,show:false,x:90,y:10,w:12,outline:false,outlineWidth:0,outlineColor:'#ffffff'} },
+  country: { format:'landscape', backgroundPreset:'countryBgMain', titleLines:'TEAM\nCONFIRMED', country:'[COUNTRY NAME]', footerTop:'PADBOL WORLD CUP ROMANIA 2026', footerBottom:'SEE YOU IN ROMANIA', hashtag:'#PadbolWorldCupRomania2026', styles:{ titleLines:{x:14.99,y:46.44,size:6.2,scale:1.29,anchor:'middle',maxW:24,gradient:true,gradientStart:'#b78723',gradientEnd:'#f7dd8b',outline:true,outlineWidth:1.3,outlineColor:'#1d1203',shadow:true,shadowDx:.65,shadowDy:.85,shadowBlur:1.7,shadowColor:'#0c0b10'}, country:{x:68.5,y:76.3,size:8.8,scale:1,anchor:'middle',maxW:54,outline:true,outlineWidth:2.6,outlineColor:'#b78628',shadow:true,shadowDx:.7,shadowDy:.9,shadowBlur:1.9,shadowColor:'#0c0b10'}, footerTop:{x:4.8,y:89.56,size:4.0,scale:1,anchor:'start',maxW:48,gradient:false}, footerBottom:{x:4.8,y:95.5,size:4.8,scale:1,anchor:'start',maxW:42,outline:false}, hashtag:{x:95.5,y:92.2,size:3.0,scale:1,anchor:'end',maxW:34,gradient:true,gradientStart:'#b78723',gradientEnd:'#f7dd8b',shadow:true,shadowDx:.5,shadowDy:.6,shadowBlur:1.2,shadowColor:'#051127'} }, mainLogo:{preset:'logo1',useCustom:false,show:true,x:15.14,y:21.27,w:26.69,outline:false,outlineWidth:0,outlineColor:'#ffffff'}, countryOverlay:{show:true,opacity:0.16,x:63.93,y:37.55,w:24.54}, countryFigure:{show:true,preset:'countryFigure1',x:63.93,y:37.55,w:24.54,opacity:0.88}, frp:{preset:'frp1',useCustom:false,show:false,x:12,y:10,w:12,outline:false,outlineWidth:0,outlineColor:'#ffffff'}, agency:{preset:'agency1',useCustom:false,show:false,x:90,y:10,w:12,outline:false,outlineWidth:0,outlineColor:'#ffffff'} },
   player: { format:'landscape', announcementLabel:'PLAYER ANNOUNCEMENT', player:'[PLAYER NAME]', country:'[COUNTRY]', footerLines:'PADBOL WORLD CUP\nROMANIA 2026', hashtag:'#PadbolWorldCupRomania2026', styles:{ announcementLabel:{x:6,y:38.5,size:5.0,scale:1,anchor:'start',maxW:32}, player:{x:6,y:49.5,size:7.4,scale:1,anchor:'start',maxW:38}, country:{x:6,y:59.5,size:4.6,scale:1,anchor:'start',maxW:20}, footerLines:{x:6,y:79,size:6.0,scale:1,anchor:'start',maxW:32}, hashtag:{x:50,y:93.5,size:3.0,scale:1,anchor:'middle',maxW:44} }, mainLogo:{preset:'logo1',useCustom:false,show:true,x:14.5,y:16,w:20,outline:false,outlineWidth:0,outlineColor:'#ffffff'}, frp:{preset:'frp1',useCustom:false,show:false,x:10,y:10,w:12,outline:false,outlineWidth:0,outlineColor:'#ffffff'}, agency:{preset:'agency1',useCustom:false,show:false,x:90,y:10,w:12,outline:false,outlineWidth:0,outlineColor:'#ffffff'} },
   bio: { format:'landscape', player:'[PLAYER NAME]', country:'[COUNTRY]', bioText:'Write the player description and palmares here.', sectionLabel:'PALMARES / PROFILE', footerLines:'PADBOL WORLD CUP\nROMANIA 2026', hashtag:'#PadbolWorldCupRomania2026', styles:{ player:{x:8,y:38,size:4.8,scale:1,anchor:'start',maxW:32}, country:{x:8,y:45,size:3.8,scale:1,anchor:'start',maxW:22}, sectionLabel:{x:8,y:61,size:2.4,scale:1,anchor:'start',maxW:26}, bioText:{x:8,y:66,size:2.3,scale:1,anchor:'start',maxW:34}, footerLines:{x:8,y:90,size:4.2,scale:1,anchor:'start',maxW:34}, hashtag:{x:92,y:95,size:2.4,scale:1,anchor:'end',maxW:24} }, mainLogo:{preset:'logo1',useCustom:false,show:true,x:17,y:14,w:20,outline:false,outlineWidth:0,outlineColor:'#ffffff'}, frp:{preset:'frp1',useCustom:false,show:false,x:10,y:10,w:12,outline:false,outlineWidth:0,outlineColor:'#ffffff'}, agency:{preset:'agency1',useCustom:false,show:false,x:90,y:10,w:12,outline:false,outlineWidth:0,outlineColor:'#ffffff'} }
 };
@@ -344,6 +344,94 @@ function applyUserDefaultFormatStates(){
   });
 }
 applyUserDefaultFormatStates();
+
+// User supplied default: Country Confirmed preset
+(function(){
+  const countryLandscape = {
+    format:'landscape',
+    backgroundPreset:'countryBgMain',
+    titleLines:'TEAM\nCONFIRMED',
+    country:'[COUNTRY NAME]',
+    footerTop:'PADBOL WORLD CUP ROMANIA 2026',
+    footerBottom:'SEE YOU IN ROMANIA',
+    hashtag:'#PadbolWorldCupRomania2026',
+    styles:{
+      titleLines:{x:14.99,y:46.44,size:6.2,scale:1.29,anchor:'middle',maxW:24,gradient:true,gradientStart:'#b78723',gradientEnd:'#f7dd8b',outline:true,outlineWidth:1.3,outlineColor:'#1d1203',shadow:true,shadowDx:.65,shadowDy:.85,shadowBlur:1.7,shadowColor:'#0c0b10'},
+      country:{x:68.5,y:76.3,size:8.8,scale:1,anchor:'middle',maxW:54,outline:true,outlineWidth:2.6,outlineColor:'#b78628',shadow:true,shadowDx:.7,shadowDy:.9,shadowBlur:1.9,shadowColor:'#0c0b10'},
+      footerTop:{x:4.8,y:89.56,size:4,scale:1,anchor:'start',maxW:48,gradient:false},
+      footerBottom:{x:4.8,y:95.5,size:4.8,scale:1,anchor:'start',maxW:42,outline:false},
+      hashtag:{x:95.5,y:92.2,size:3,scale:1,anchor:'end',maxW:34,gradient:true,gradientStart:'#b78723',gradientEnd:'#f7dd8b',shadow:true,shadowDx:.5,shadowDy:.6,shadowBlur:1.2,shadowColor:'#051127'}
+    },
+    mainLogo:{preset:'logo1',useCustom:false,show:true,x:15.14,y:21.27,w:26.69,outline:false,outlineWidth:0,outlineColor:'#ffffff'},
+    countryOverlay:{show:true,opacity:.16,x:63.93,y:37.55,w:24.54},
+    countryFigure:{show:true,preset:'countryFigure1',x:63.93,y:37.55,w:24.54,opacity:.88},
+    frp:{preset:'frp1',useCustom:false,show:false,x:12,y:10,w:12,outline:false,outlineWidth:0,outlineColor:'#ffffff'},
+    agency:{preset:'agency1',useCustom:false,show:false,x:90,y:10,w:12,outline:false,outlineWidth:0,outlineColor:'#ffffff'},
+    customTexts:[]
+  };
+
+  TEMPLATE_DEFAULTS.country = clone(countryLandscape);
+
+  if (!RESPONSIVE_PRESETS.country) RESPONSIVE_PRESETS.country = {};
+  RESPONSIVE_PRESETS.country.landscape = clone(countryLandscape);
+
+  RESPONSIVE_PRESETS.country.square = deepMerge(clone(countryLandscape), {
+    format:'square',
+    styles:{
+      titleLines:{x:50,y:42.5,size:5.4,scale:1,maxW:42},
+      country:{x:50,y:79,size:7.7,scale:1.1,maxW:72},
+      footerTop:{x:7.5,y:90.8,size:3,maxW:58},
+      footerBottom:{x:50,y:85.6,size:4,anchor:'middle',maxW:66},
+      hashtag:{x:95,y:95.2,size:2.35,maxW:38}
+    },
+    mainLogo:{x:50.72,y:13.94,w:25.12},
+    countryOverlay:{x:34,y:61,w:34},
+    countryFigure:{x:34,y:61,w:34}
+  });
+
+  RESPONSIVE_PRESETS.country.story = deepMerge(clone(countryLandscape), {
+    format:'story',
+    styles:{
+      titleLines:{x:50.23,y:19.38,size:4.2,scale:.86,maxW:42,outlineWidth:1.2},
+      country:{x:4.01,y:84.43,size:6.2,scale:1.38,anchor:'start',maxW:92,outlineWidth:1.6,outlineColor:'#ffffff',gradient:true,gradientStart:'#153d92',gradientEnd:'#2a66c9',shadowColor:'#102246'},
+      footerTop:{x:4.4,y:90.6,size:2.55,maxW:74},
+      footerBottom:{x:4.4,y:95,size:3.35,maxW:78},
+      hashtag:{x:95,y:96.3,size:2.15,maxW:42,gradientStart:'#153d92',gradientEnd:'#2a66c9'}
+    },
+    mainLogo:{x:50,y:13.2,w:31.5},
+    countryOverlay:{x:40.78,y:43.18,w:49.73},
+    countryFigure:{x:40.78,y:43.18,w:49.73}
+  });
+
+  RESPONSIVE_PRESETS.country.social = deepMerge(clone(countryLandscape), {
+    format:'social',
+    styles:{
+      titleLines:{x:73.66,y:19.23,size:5,scale:1,maxW:28},
+      country:{x:32.34,y:72.86,size:6.8,scale:1.2,maxW:42},
+      footerTop:{x:8,y:88.6,size:3,maxW:58},
+      footerBottom:{x:8,y:94,size:4,maxW:58},
+      hashtag:{x:95,y:92.5,size:2.45,maxW:38}
+    },
+    mainLogo:{x:22.89,y:24.64,w:26},
+    countryOverlay:{x:40.78,y:43.18,w:49.73},
+    countryFigure:{x:40.78,y:43.18,w:49.73}
+  });
+
+  RESPONSIVE_PRESETS.country.poster = deepMerge(clone(countryLandscape), {
+    format:'poster',
+    styles:{
+      titleLines:{x:50,y:20.8,size:4,scale:.9,maxW:42,outlineWidth:1.2},
+      country:{x:4.2,y:84.2,size:6.5,scale:1.24,anchor:'start',maxW:90,outlineWidth:1.5,outlineColor:'#ffffff',gradient:true,gradientStart:'#153d92',gradientEnd:'#2a66c9',shadowColor:'#102246'},
+      footerTop:{x:4.8,y:90.3,size:2.55,maxW:72},
+      footerBottom:{x:4.8,y:94.8,size:3.35,maxW:78},
+      hashtag:{x:95,y:96,size:2.05,maxW:42,gradientStart:'#153d92',gradientEnd:'#2a66c9'}
+    },
+    mainLogo:{x:50,y:12.8,w:28.2},
+    countryOverlay:{x:39.5,y:43.8,w:48},
+    countryFigure:{x:39.5,y:43.8,w:48}
+  });
+})();
+
 
 // User supplied default: Official Poster preset
 (function(){
