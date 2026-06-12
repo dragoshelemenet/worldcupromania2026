@@ -3,7 +3,7 @@
   "version": 1,
   "template": "country",
   "activeFormat": "landscape",
-  "exportedAt": "2026-06-12T22:07:29.609029+00:00",
+  "exportedAt": "2026-06-12T22:21:05.704547+00:00",
   "formatStates": {
     "landscape": {
       "format": "landscape",
@@ -64,7 +64,9 @@
           "size": 4,
           "scale": 1,
           "anchor": "start",
-          "maxW": 48
+          "maxW": 48,
+          "fontFamily": "Impact, Haettenschweiler, Arial Black, sans-serif",
+          "fontWeight": 900
         },
         "footerBottom": {
           "x": 4.8,
@@ -72,7 +74,9 @@
           "size": 4.8,
           "scale": 1,
           "anchor": "start",
-          "maxW": 42
+          "maxW": 42,
+          "fontFamily": "Impact, Haettenschweiler, Arial Black, sans-serif",
+          "fontWeight": 900
         },
         "hashtag": {
           "x": 95.5,
@@ -88,7 +92,9 @@
           "shadowDx": 0.5,
           "shadowDy": 0.6,
           "shadowBlur": 1.2,
-          "shadowColor": "#051127"
+          "shadowColor": "#051127",
+          "fontFamily": "Impact, Haettenschweiler, Arial Black, sans-serif",
+          "fontWeight": 900
         }
       },
       "mainLogo": {
@@ -200,7 +206,9 @@
           "size": 4,
           "scale": 1,
           "anchor": "start",
-          "maxW": 48
+          "maxW": 48,
+          "fontFamily": "Impact, Haettenschweiler, Arial Black, sans-serif",
+          "fontWeight": 900
         },
         "footerBottom": {
           "x": 4.8,
@@ -208,7 +216,9 @@
           "size": 4.8,
           "scale": 1,
           "anchor": "start",
-          "maxW": 42
+          "maxW": 42,
+          "fontFamily": "Impact, Haettenschweiler, Arial Black, sans-serif",
+          "fontWeight": 900
         },
         "hashtag": {
           "x": 95.5,
@@ -224,7 +234,9 @@
           "shadowDx": 0.5,
           "shadowDy": 0.6,
           "shadowBlur": 1.2,
-          "shadowColor": "#051127"
+          "shadowColor": "#051127",
+          "fontFamily": "Impact, Haettenschweiler, Arial Black, sans-serif",
+          "fontWeight": 900
         }
       },
       "mainLogo": {
@@ -336,7 +348,9 @@
           "size": 4,
           "scale": 1,
           "anchor": "start",
-          "maxW": 48
+          "maxW": 48,
+          "fontFamily": "Impact, Haettenschweiler, Arial Black, sans-serif",
+          "fontWeight": 900
         },
         "footerBottom": {
           "x": 4.8,
@@ -344,7 +358,9 @@
           "size": 4.8,
           "scale": 1,
           "anchor": "start",
-          "maxW": 42
+          "maxW": 42,
+          "fontFamily": "Impact, Haettenschweiler, Arial Black, sans-serif",
+          "fontWeight": 900
         },
         "hashtag": {
           "x": 95.5,
@@ -360,7 +376,9 @@
           "shadowDx": 0.5,
           "shadowDy": 0.6,
           "shadowBlur": 1.2,
-          "shadowColor": "#051127"
+          "shadowColor": "#051127",
+          "fontFamily": "Impact, Haettenschweiler, Arial Black, sans-serif",
+          "fontWeight": 900
         }
       },
       "mainLogo": {
@@ -472,7 +490,9 @@
           "size": 4,
           "scale": 1,
           "anchor": "start",
-          "maxW": 48
+          "maxW": 48,
+          "fontFamily": "Impact, Haettenschweiler, Arial Black, sans-serif",
+          "fontWeight": 900
         },
         "footerBottom": {
           "x": 4.8,
@@ -480,7 +500,9 @@
           "size": 4.8,
           "scale": 1,
           "anchor": "start",
-          "maxW": 42
+          "maxW": 42,
+          "fontFamily": "Impact, Haettenschweiler, Arial Black, sans-serif",
+          "fontWeight": 900
         },
         "hashtag": {
           "x": 95.5,
@@ -496,7 +518,9 @@
           "shadowDx": 0.5,
           "shadowDy": 0.6,
           "shadowBlur": 1.2,
-          "shadowColor": "#051127"
+          "shadowColor": "#051127",
+          "fontFamily": "Impact, Haettenschweiler, Arial Black, sans-serif",
+          "fontWeight": 900
         }
       },
       "mainLogo": {
@@ -608,7 +632,9 @@
           "size": 4,
           "scale": 1,
           "anchor": "start",
-          "maxW": 48
+          "maxW": 48,
+          "fontFamily": "Impact, Haettenschweiler, Arial Black, sans-serif",
+          "fontWeight": 900
         },
         "footerBottom": {
           "x": 4.8,
@@ -616,7 +642,9 @@
           "size": 4.8,
           "scale": 1,
           "anchor": "start",
-          "maxW": 42
+          "maxW": 42,
+          "fontFamily": "Impact, Haettenschweiler, Arial Black, sans-serif",
+          "fontWeight": 900
         },
         "hashtag": {
           "x": 95.5,
@@ -632,7 +660,9 @@
           "shadowDx": 0.5,
           "shadowDy": 0.6,
           "shadowBlur": 1.2,
-          "shadowColor": "#051127"
+          "shadowColor": "#051127",
+          "fontFamily": "Impact, Haettenschweiler, Arial Black, sans-serif",
+          "fontWeight": 900
         }
       },
       "mainLogo": {
